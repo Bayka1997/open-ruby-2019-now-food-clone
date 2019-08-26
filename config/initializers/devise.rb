@@ -11,7 +11,7 @@ Devise.setup do |config|
   config.expire_all_remember_me_on_sign_out = true
   config.password_length = 3..128
   config.email_regexp = Settings.validate.VALID_EMAIL_REGEX
-  config.reset_password_within = 1.hours
+  config.reset_password_within = 6.hours
   config.sign_out_via = :delete
   config.scoped_views = true
 end
