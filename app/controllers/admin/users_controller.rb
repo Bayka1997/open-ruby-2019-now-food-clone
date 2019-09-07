@@ -4,7 +4,7 @@ class Admin::UsersController < AdminController
 
   def index
     @search = User.ransack params[:search]
-    @users = @search.result.page(params[:page]).per Settings.admin.user.num_in_page
+    @users = @search.result.order_by_role.page(params[:page]).per Settings.admin.user.num_in_page
   end
 
   def new_user
@@ -22,7 +22,7 @@ class Admin::UsersController < AdminController
   end
 
   def update
-    if @user.update user_params
+    if @user.update_attributes user_params
       render json: {success: @user}
     else
       render json: {errors: @user.errors}

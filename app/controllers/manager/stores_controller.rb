@@ -29,7 +29,7 @@ class Manager::StoresController < ManagerController
   end
 
   def update
-    if @store.update store_params
+    if @store.update_attributes store_params
       render json: {success: @store}
     else
       render json: {errors: @store.errors}
@@ -39,6 +39,11 @@ class Manager::StoresController < ManagerController
   def destroy
     @store.destroy
 
+    respond_to :js
+  end
+
+  def get_districts
+    @districts = District.by_province_id params[:id]
     respond_to :js
   end
 
