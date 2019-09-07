@@ -9,16 +9,19 @@
         </div>
       </div>
     </div>
+    <% if count_get_images(@product, :thumbnail) > Settings.zero %>
+      <div class="col-3">
+        <strong><%= t ".thumbnails" %></strong>
+        <%= render "image_show", images: get_images(@product, :thumbnail), id: "image-1" %>
+      </div>
+    <% end %>
 
-    <div class="col-3">
-      <strong><%= t ".thumbnails" %></strong>
-      <%= render "image_show", images: get_images(@product, :thumbnail), id: "image-1" %>
-    </div>
-
-    <div class="col-3">
-      <strong><%= t ".images" %></strong>
-      <%= render "image_show", images: get_images(@product, :image), id: "image-1" %>
-    </div>
+    <% if count_get_images(@product, :image) > Settings.zero %>
+      <div class="col-3">
+        <strong><%= t ".images" %></strong>
+        <%= render "image_show", images: get_images(@product, :image), id: "image-1" %>
+      </div>
+    <% end %>
   </div>
 
   <% if @parent_comments.present? %>

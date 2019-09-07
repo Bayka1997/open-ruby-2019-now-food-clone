@@ -16,11 +16,15 @@ module ApplicationHelper
   end
 
   def get_images imageable, thumbnail
-    if :thumbnail.eql? thumbnail
-      imageable.images.thumbnail
-    else
-      imageable.images.image
-    end
+    return imageable.images.thumbnail if :thumbnail.eql? thumbnail
+
+    imageable.images.image
+  end
+
+  def count_get_images imageable, thumbnail
+    return imageable.images.thumbnail.count if :thumbnail.eql? thumbnail
+
+    imageable.images.image.count
   end
 
   def number_to_vnd number

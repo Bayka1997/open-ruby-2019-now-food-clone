@@ -19,8 +19,4 @@ class Product < ApplicationRecord
     allow_destroy: true
 
   scope :products_of_current_user, ->(product_ids){where id: product_ids}
-
-  def get_name
-    self.name
-  end
 end

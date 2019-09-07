@@ -23,8 +23,4 @@ class Combo < ApplicationRecord
     allow_destroy: true
 
   scope :combo_of_current_user, ->(combo_ids){where id: combo_ids}
-
-  def get_name
-    self.name
-  end
 end

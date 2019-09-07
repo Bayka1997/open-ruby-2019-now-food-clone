@@ -1,4 +1,5 @@
 class Manager::ProductsController < ManagerController
+
   before_action :load_product, except: %i(index create new)
   before_action :load_parent_comments, only: %i(show)
 
