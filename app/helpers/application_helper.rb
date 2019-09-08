@@ -27,6 +27,14 @@ module ApplicationHelper
     imageable.images.image.count
   end
 
+  def count_store
+    Store.pluck(:id).count
+  end
+
+  def count_comment commentable
+    commentable.comments.count
+  end
+
   def number_to_vnd number
     "#{number_to_currency(number,unit: "",separator: ",",delimiter: ".")} #{Settings.unit}"
   end

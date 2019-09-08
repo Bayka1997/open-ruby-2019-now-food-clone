@@ -1,0 +1,57 @@
+<div class="container">
+  <div class="row d-flex justify-content-center">
+    <div class="menu-content pb-20 col-lg-8">
+      <div class="title text-center">
+        <h1 class="mb-10"><%= t ".slogan" %></h1>
+        <p><%= t ".description", count: count_store() %></p>
+      </div>
+    </div>
+  </div>
+  <h4><%= t ".product" %></h4>
+  <div class="row" id="list_products">
+    <% @products.each do |product| %>
+      <div class="col-lg-3 col-md-6 single-blog">
+        <div class="thumb mb-3">
+          <%= image_tag get_thumnail(product), class: "img-responsive" %>
+        </div>
+        <a href="#" class="genric-btn primary-border buton_add mb-2">
+          <%= t ".add_to_cart" %>
+        </a>
+        <h4><%= number_to_vnd product.price %></h4>
+        <div class="meta-bottom d-flex justify-content-between">
+          <p><i class="fa fa-comment"></i> <%= t ".comment", count: count_comment(product) %></p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <div class="col-lg-12 d-flex justify-content-center mb-5">
+    <button class="btn btn-sm align-items-center" id="load_product"
+      store_id="<%= params[:id] %>" page="<%= Settings.zero %>">
+      <i class="fa fa-spinner"></i> <%= t ".see_more" %>
+    </button>
+  </div>
+
+  <h4><%= t ".combo" %></h4>
+  <div class="row" id="list_combos">
+    <% @combos.each do |combo| %>
+      <div class="col-lg-3 col-md-6 single-blog">
+        <div class="thumb mb-3">
+          <%= image_tag get_thumnail(combo), class: "img-responsive" %>
+        </div>
+        <a href="#" class="genric-btn primary-border buton_add mb-2">
+          <%= t ".add_to_cart" %>
+        </a>
+        <h4><%= number_to_vnd combo.price %></h4>
+        <div class="meta-bottom d-flex justify-content-between">
+          <p><i class="fa fa-comment"></i> <%= t ".comment", count: count_comment(combo) %></p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <div class="col-lg-12 d-flex justify-content-center mb-5">
+    <button class="btn btn-sm align-items-center" id="load_combo"
+      store_id="<%= params[:id] %>" page="<%= Settings.zero %>">
+      <i class="fa fa-spinner"></i> <%= t ".see_more" %>
+    </button>
+  </div>
+</div>

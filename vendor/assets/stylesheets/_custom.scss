@@ -10,6 +10,18 @@
   padding-bottom: 50px;
 }
 
+.thumb > img {
+  width: 100%;
+}
+
+.single-blog h4 {
+  color: $primary-color !important;
+}
+
+.buton_add:hover {
+  color: $while_e !important;
+}
+
 .container-login{
   margin: 80px 50px;
   height: 100%;

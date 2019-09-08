@@ -21,7 +21,7 @@ class User < ApplicationRecord
   validates :name, presence: true, length:
     {minimum: Settings.user.min_name_length,
     maximum: Settings.user.max_name_length}, allow_nil: true
-  validates :cost, presence: true
+  validates :cost, presence: true, allow_nil: true
 
   scope :order_by_role, ->{order role: :desc}
 
