@@ -17,3 +17,4 @@
 //= require cocoon
 //= require admin/autoNumeric.js
 //= require admin/select2.js
+//= require dropzone

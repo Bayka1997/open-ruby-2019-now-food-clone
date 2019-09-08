@@ -8,8 +8,12 @@
   </head>
   <body>
     <%= render "layouts/header" %>
-    <%= render "layouts/banner" %>
-    <%= yield %>
+    <% if controller_name == "home_pages" %>
+      <%= render "layouts/banner" %>
+    <% end %>
+    <div class="container mt-70">
+      <%= yield %>
+    </div>
     <%= render "layouts/footer" %>
   </body>
 </html>

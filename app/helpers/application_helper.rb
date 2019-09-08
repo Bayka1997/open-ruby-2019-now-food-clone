@@ -12,7 +12,7 @@ module ApplicationHelper
   end
 
   def get_thumnail imageable
-    imageable.images.thumbnail.present? ? "#{imageable.images.thumbnail.first.url}" : "#{Settings.default}"
+    imageable.images.thumbnail.present? ? "#{imageable.images.thumbnail.first.url}" : "#{Settings.upload.default}"
   end
 
   def get_images imageable, thumbnail

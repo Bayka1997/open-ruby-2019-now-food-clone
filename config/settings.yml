@@ -81,3 +81,5 @@ step: 1
 zero: 0
 unit: "VND"
 url_select2: "/assets/admin/select2.js"
+url_store: "https://lavenderstudio.com.vn/wp-content/uploads/2017/03/chup-san-pham.jpg"
+province_default: 1
